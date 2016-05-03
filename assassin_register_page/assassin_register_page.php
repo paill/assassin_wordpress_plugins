@@ -5,7 +5,6 @@ Description: Adds first name and last name as required fields for registration
 Author:		 Paul Salessi
 */
 
-// Update Registration Form
 // Code based on https://codex.wordpress.org/Customizing_the_Registration_Form#Example
 
 // 1. Add new form elements
@@ -52,4 +51,3 @@ function first_last_name_user_register( $user_id ) {
 		update_user_meta( $user_id, 'last_name', trim( $_POST['last_name'] ) );
 	}
 } // end first_last_name_user_register
-// end Update Registration Form

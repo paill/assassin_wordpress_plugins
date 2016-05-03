@@ -5,7 +5,6 @@ Description: Adds custom CSS to login page and all variants (forgot-password & r
 Author:		 Paul Salessi
 */
 
-// Update Login Page
 // Code based on https://codex.wordpress.org/Customizing_the_Login_Form
 
 // 1. Update login logo
@@ -22,4 +21,3 @@ function dnc_logo() {
 add_action( 'login_enqueue_scripts', 'dnc_logo' );
 
 // 2. Probably add some style later"
-// end Update Login Page
