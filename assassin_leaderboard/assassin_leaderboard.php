@@ -11,7 +11,7 @@ function include_datatables() {
 	$datatables = '<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/dt/dt-1.10.11,r-2.0.2/datatables.min.css"/>';
 	$datatables .= '<script type="text/javascript" src="https://cdn.datatables.net/t/dt/dt-1.10.11,r-2.0.2/datatables.min.js"></script>';
 	echo $datatables;
-}
+} // end include_datatables
 
 // 2. Add assassin-leaderboard shortcode and construct HTML user table
 // Going to use DataTables for this
@@ -46,7 +46,7 @@ function assassin_leaderboard( $atts ){
 	$assassin_leaderboard_shortcode_used = true;
 	
 	return $assassin_users_table;
-}
+} // end assassin_leaderboard
 add_shortcode( 'assassin-leaderboard', 'assassin_leaderboard' );
 
 // 3. Create DataTables Javascript object
@@ -75,5 +75,5 @@ function assassin_datatables_create() {
 		});
 	</script>
 	<?php
-}
+} // end assassin_datatables_create
 add_action('wp_footer', 'assassin_datatables_create');

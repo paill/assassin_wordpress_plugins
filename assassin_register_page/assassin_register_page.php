@@ -1,7 +1,7 @@
 <?php
 /* 
 Plugin Name: Assassin Register Page
-Description: Adds first name and last name as required fields for registration
+Description: Adds first name and last name as required fields for registration and initializes killcode and score 
 Author:		 Paul Salessi
 */
 
