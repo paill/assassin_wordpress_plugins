@@ -71,7 +71,7 @@ function assassin_hide_fields( $user ) {
 		];
 		jQuery(document).ready(function( $ ){
 			$.each(fields_to_remove, function ( i, selector) {
-				$(selector).remove();
+				$(selector).hide();
 			});
 		});
 	</script>
