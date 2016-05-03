@@ -6,10 +6,21 @@ Author:		 Paul Salessi
 */
 
 // 1. Add assassin-kill-feed and construct kill feed table
-function assassin_kill_feed() {
+function assassin_kill_feed( $atts ) {
+	
+	$a = shortcode_atts( array(
+        'n' => 0
+    ), $atts );
+	
+	$limit = '';
+	
+	if ( $a["n"] ) {
+		$limit = " LIMIT " . $a["n"];
+	}
+	
 	global $wpdb;
 	
-	$kill_logs = $wpdb->get_results( 'SELECT * FROM wp_assassin_kill_logs ORDER BY time_of_kill DESC' );
+	$kill_logs = $wpdb->get_results( 'SELECT * FROM wp_assassin_kill_logs ORDER BY time_of_kill DESC' . $limit );
 
 	$kill_list = "<ul>";
 	
@@ -29,3 +40,4 @@ function assassin_kill_feed() {
 	return $kill_list;
 } // end assassin_kill_feed
 add_shortcode( 'assassin-kill-feed', 'assassin_kill_feed' );
+add_filter( 'widget_text', 'do_shortcode');
