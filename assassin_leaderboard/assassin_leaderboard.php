@@ -59,15 +59,18 @@ function assassin_datatables_create() {
 	<script type="text/javascript">
 		jQuery(document).ready(function ( $ ) {
 			$('#assassin_users_table').DataTable({
-				responsive: true,
-				paging:   false,
-                columnDefs: [
+				"responsive" : true,
+				"paging" : false,
+                "columnDefs" : [
 					{ "width": "35%", "targets": 0 },
 					{ "width": "35%", "targets": 1 },
 					{ "width": "20%", "targets": 2 },
 					{ "width": "10%", "targets": 3 }
-                ]
+                ],
+				"order": [[ 2, "desc" ]]
 			});
+			
+			// Need this to fix responsive columns
 			$('#assassin_users_table').css("width", "auto");
 		});
 	</script>
