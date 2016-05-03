@@ -1,7 +1,7 @@
 <?php
 /* 
 Plugin Name: Assassin Report Kills
-Description: Adds Dashboard page for submitting killcodes. A kill increases the submitters score and resets the killed user's killcode
+Description: Adds Dashboard page for submitting killcodes. A kill increases the submitters score and resets the killed user's killcode. Stores kills in a database table for logging purposes.
 Author:		 Paul Salessi
 */
 
@@ -23,7 +23,7 @@ function assassin_kills_install() {
 	
 	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 	dbDelta( $sql );
-}
+} // end assassin_kills_install
 register_activation_hook( __FILE__, 'assassin_kills_install' );
 
 // 2. Register new menu page for reporting kills	
@@ -122,7 +122,7 @@ function report_kill_form_page() {
 	</div>
 
 	<?php
-}
+} // end report_kill_form_page
 
 // 4. Remove the table on plugin deactivation
 function assassin_kills_uninstall() {	
@@ -131,5 +131,5 @@ function assassin_kills_uninstall() {
 	$table_name = $wpdb->prefix . 'assassin_kill_logs';
 
 	$wpdb->query("DROP TABLE IF EXISTS $table_name");
-}
+} // end assassin_kills_uninstall
 register_deactivation_hook( __FILE__, 'assassin_kills_uninstall' );
