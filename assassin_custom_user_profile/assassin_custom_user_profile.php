@@ -1,7 +1,7 @@
 <?php
 /* 
 Plugin Name: Assassin Custom User Profile
-Description: Adds extra user fields for assassin (killcode & score) and hides unneeded fields (website, bio, etc.)
+Description: Adds extra user fields for assassin (killcode & score) and hides unused fields (website, bio, etc.)
 Author:		 Paul Salessi
 */
 
@@ -55,7 +55,8 @@ function assassin_save_extra_profile_fields( $user_id ) {
 	update_user_meta( $user_id, 'score', $_POST['score'] );
 } // end assassin_save_extra_profile_fields
 
-// 3. Hide unneeded user profile fields
+// 3. Hide unused user profile fields
+// Note: If someone has Javascript disabled, this won't work, but it's okay if the fields ultimately show
 add_action( 'show_user_profile', 'assassin_hide_fields' );
 add_action( 'edit_user_profile', 'assassin_hide_fields' );
 function assassin_hide_fields( $user ) {
