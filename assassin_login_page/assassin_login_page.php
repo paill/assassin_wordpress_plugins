@@ -12,8 +12,10 @@ function dnc_logo() {
 ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
-            background-image: url(<?php echo plugins_url( 'images/dnc_avatar.jpg', __FILE__ ); ?>);
+            background-image: url(<?php echo plugins_url( 'images/dnc_avatar.png', __FILE__ ); ?>);
             padding-bottom: 30px;
+			background-size: initial;
+			width: initial;
         }
     </style>
 <?php 

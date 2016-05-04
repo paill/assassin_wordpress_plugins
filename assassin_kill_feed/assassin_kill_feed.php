@@ -19,8 +19,9 @@ function assassin_kill_feed( $atts ) {
 	}
 	
 	global $wpdb;
+	$table_name = $wpdb->prefix . 'assassin_kill_logs';
 	
-	$kill_logs = $wpdb->get_results( 'SELECT * FROM wp_assassin_kill_logs ORDER BY time_of_kill DESC' . $limit );
+	$kill_logs = $wpdb->get_results( 'SELECT * FROM ' . $table_name . ' ORDER BY time_of_kill DESC' . $limit );
 
 	$kill_list = "<ul>";
 	
