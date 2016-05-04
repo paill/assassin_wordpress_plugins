@@ -20,7 +20,8 @@ function assassin_leaderboard( $atts ){
 	
 	$all_users = get_users();
 	
-	$assassin_users_table = '<table id="assassin_users_table" class="display">';
+	$assassin_users_table = '<div class="table-responsive">';
+	$assassin_users_table .= '<table id="assassin_users_table" class="display">';
 	$assassin_users_table .= '<thead>';
 	$assassin_users_table .= '<tr>';
 	$assassin_users_table .= '<th>First Name</th>';
@@ -42,6 +43,7 @@ function assassin_leaderboard( $atts ){
 	
 	$assassin_users_table .= '</tbody>';
 	$assassin_users_table .= '</table>';
+	$assassin_users_table .= '</div>';
 	
 	$assassin_leaderboard_shortcode_used = true;
 	
@@ -62,10 +64,10 @@ function assassin_datatables_create() {
 				"responsive" : true,
 				"paging" : false,
                 "columnDefs" : [
-					{ "width": "35%", "targets": 0 },
-					{ "width": "35%", "targets": 1 },
-					{ "width": "20%", "targets": 2 },
-					{ "width": "10%", "targets": 3 }
+					{ "width": "25%", "targets": 0 },
+					{ "width": "25%", "targets": 1 },
+					{ "width": "25%", "targets": 2 },
+					{ "width": "25%", "targets": 3 }
                 ],
 				"order": [[ 2, "desc" ]]
 			});
